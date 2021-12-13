@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+   <style type="text/css">
+        .important { color: #336699; }
+        body{
+            background-color: bisque;
+        }
+    </style>
     <title>{% block title %}{% endblock %} - My Webpage</title>
     {% endblock %}
     <!-- Bootstrap CSS -->
@@ -14,7 +19,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
