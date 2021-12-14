@@ -8,10 +8,31 @@
 {% endblock %}
 {% block content %}
     <center>
+    <br/>
+    <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Value1</th>
+        <th>Value2</th>
+        <th>Operation</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>{{ value1 }}</td>
+          <td>{{ value2 }}</td>
+          <td>{{ operation }}</td>
+          <td>{{ result }}</td>
+        </tr>
+    </tbody>
+  </table>
+
     <h1>Result</h1>
     <strong>Value 1: </strong> {{ value1 }} <br>
     <strong>Value 2: </strong> {{ value2 }} <br>
     <strong>Operation: </strong> {{ operation }} <br>
     <strong>Result: </strong> {{ result }}
+
     </center>
 {% endblock %}
