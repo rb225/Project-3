@@ -13,13 +13,13 @@ class CalculatorController(ControllerBase):
         operation = request.form['operation']
 
         if request.form['value1'] == '' and request.form['value2'] == '':
-            flash('Please enter valid input in both the fields')
+            flash('Please provide valid input in both the fields')
         elif request.form['value1'] == '':
-            flash('Please enter valid input for Value 1 field')
+            flash('Please enter the values in Value1 field')
         elif request.form['value2'] == '':
-            flash('Please enter valid input for Value 2 field')
+            flash('Please enter the values in Value2 field')
         else:
-            flash('Calculation is done successfully !!!!')
+            flash('Operation performed successfully !!!!')
 
             # make the tuple
             my_tuple = (value1, value2)

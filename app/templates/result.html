@@ -7,24 +7,11 @@
     </style>
 {% endblock %}
 {% block content %}
-    <table class="table table-hover table-bordered table-dark table-striped">
-        <tr>
-            <th>Value 1</th>
-            <th>Value 2</th>
-            <th>Operation</th>
-            <th>Result</th>
-        </tr>
-        <tr>
-            <td>{{ value1 }}</td>
-            <td>{{ value2 }}</td>
-            <td>{{ operation }}</td>
-            <td colspan="2">{{ result }}</td>
-        </tr>
-    </table>
-    <h1>result</h1>
+    <center>
+    <h1>Result</h1>
     <strong>Value 1: </strong> {{ value1 }} <br>
     <strong>Value 2: </strong> {{ value2 }} <br>
     <strong>Operation: </strong> {{ operation }} <br>
     <strong>Result: </strong> {{ result }}
-
+    </center>
 {% endblock %}
