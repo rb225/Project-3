@@ -4,14 +4,14 @@
 
 {% block content %}
 <div class="container">
-    <h1>Recent Result</h1>
+    <h1>Current Results</h1>
     <strong>Value 1: </strong> {{ val1 }} <br>
     <strong>Value 2: </strong> {{ val2 }} <br>
     <strong>Operation: </strong> {{ ope }} <br>
     <strong>Result: </strong> {{ res }}
     <br/><br/>
     <hr/>
-    <h1>History Results</h1>
+    <h1>Stored Results</h1>
     <table id="data" class="dataTable cell-border">
         <thead>
         <tr>
@@ -23,15 +23,13 @@
         </tr>
         </thead>
         <tbody>
-        {% set list1 = hist.split('\n') %}
-        {% for item in list1 %}
-        {% set subitem = item.split(',') %}
+        {% for item in hist %}
         <tr>
-            <td>{{ list1.index(item)+1 }}</td>
-            <td>{{ subitem[0] }}</td>
-            <td>{{ subitem[1] }}</td>
-            <td>{{ subitem[2] }}</td>
-            <td>{{ subitem[3] }}</td>
+            <td>{{ hist.index(item) }}</td>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
         </tr>
         {% endfor %}
         </tbody>
