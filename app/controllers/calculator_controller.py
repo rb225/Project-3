@@ -26,8 +26,20 @@ class CalculatorController(ControllerBase):
             # this will call the correct operation
             getattr(Calculator, operation)(my_tuple)
             result = str(Calculator.get_last_result_value())
-            return render_template('result.html', value1=value1, value2=value2, operation=operation, result=result)
+
+            # write to file
+            str1 = value1 + "," + value2 + "," + operation + "," + result + '\n'
+            with open('output.txt', 'a+') as f:
+                f.write(str1)
+
+            with open('output.txt', 'r') as fr:
+                hist = fr.read().strip()
+
+            return render_template('result.html', val1=value1, val2=value2, ope=operation, res=result, hist=hist)
         return render_template('basicform.html')
+
+
+
 
     @staticmethod
     def get():

@@ -1,38 +1,40 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock %}
-{% block head %}
-    {{ super() }}
-    <style type="text/css">
-        .important { color: #336699; }
-    </style>
-{% endblock %}
+{% block title %}Result{% endblock %}
+
+
 {% block content %}
-    <center>
-    <br/>
-    <table id="data" class="table table-striped">
-    <thead>
-      <tr>
-        <th>Value1</th>
-        <th>Value2</th>
-        <th>Operation</th>
-        <th>Result</th>
-      </tr>
-    </thead>
-    <tbody>
+<div class="container">
+    <h1>Recent Result</h1>
+    <strong>Value 1: </strong> {{ val1 }} <br>
+    <strong>Value 2: </strong> {{ val2 }} <br>
+    <strong>Operation: </strong> {{ ope }} <br>
+    <strong>Result: </strong> {{ res }}
+    <br/><br/>
+    <hr/>
+    <h1>History Results</h1>
+    <table id="data" class="dataTable cell-border">
+        <thead>
         <tr>
-          <td>{{ value1 }}</td>
-          <td>{{ value2 }}</td>
-          <td>{{ operation }}</td>
-          <td>{{ result }}</td>
+            <th>Sr No.</th>
+            <th>Value1</th>
+            <th>Value2</th>
+            <th>Operation</th>
+            <th>Result</th>
         </tr>
-    </tbody>
-  </table>
-
-    <h1>Result</h1>
-    <strong>Value 1: </strong> {{ value1 }} <br>
-    <strong>Value 2: </strong> {{ value2 }} <br>
-    <strong>Operation: </strong> {{ operation }} <br>
-    <strong>Result: </strong> {{ result }}
-
-    </center>
+        </thead>
+        <tbody>
+        {% set list1 = hist.split('\n') %}
+        {% for item in list1 %}
+        {% set subitem = item.split(',') %}
+        <tr>
+            <td>{{ list1.index(item)+1 }}</td>
+            <td>{{ subitem[0] }}</td>
+            <td>{{ subitem[1] }}</td>
+            <td>{{ subitem[2] }}</td>
+            <td>{{ subitem[3] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}
