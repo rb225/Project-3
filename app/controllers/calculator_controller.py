@@ -15,9 +15,9 @@ class CalculatorController(ControllerBase):
         if request.form['value1'] == '' and request.form['value2'] == '':
             flash('Please provide valid input in both the fields')
         elif request.form['value1'] == '':
-            flash('Please enter the values in Value1 field')
+            flash('Please enter the values in Value-1 field')
         elif request.form['value2'] == '':
-            flash('Please enter the values in Value2 field')
+            flash('Please enter the values in Value-2 field')
         else:
             flash('Operation performed successfully !!!!')
 
