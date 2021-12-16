@@ -4,37 +4,44 @@
     {{ super() }}
     <style type="text/css">
         .important { color: #336699; }
+        .setfont{
+            font-size: 20px;
+            font-family: "Times New Roman";
+        }
+        .heade{
+            font-size:27px;
+            font-family: Constantia;
+            font-weight: bolder;
+        }
+        .browser {
+            background: white;
+        }
     </style>
 {% endblock %}
 {% block content %}
     <h1>Index</h1>
     <p class="important">
-      Welcome to my awesome homepage.
-        <img src="{{ url_for('static', filename='images/sample.jpeg') }}">
-    </p>
-    <h1>Stored Results</h1>
-    <table id="data" class="dataTable cell-border">
-        <thead>
-        <tr>
-            <th>Sr No.</th>
-            <th>Value1</th>
-            <th>Value2</th>
-            <th>Operation</th>
-            <th>Result</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for item in hist %}
-        <tr>
-            <td>{{ hist.index(item) }}</td>
-            <td>{{ item[0] }}</td>
-            <td>{{ item[1] }}</td>
-            <td>{{ item[2] }}</td>
-            <td>{{ item[3] }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="browser">
+         <img src="{{ url_for('static', filename='images/download.png') }}">
+        <div class="setfont">Flask is a web framework, it’s a Python module that lets you develop web applications easily. It’s has a small and easy-to-extend core: it’s a microframework that doesn’t include an ORM (Object Relational Manager) or such features.</div>
 
-<a href="/good/1.0/2.0">One Plus Two Good</a><br><a href="/bad/1/2">One Plus Two Bad</a>
+    </p>
+    </div>
+    <div class="browser">
+    <div class="heade">Web Framework</div>
+    <div class="setfont">A Web Application Framework or a simply a Web Framework represents a collection of libraries and modules that enable web application developers to write applications without worrying about low-level details such as protocol, thread management, and so on.
+    </div>
+    </div>
+     <div class="browser">
+    <div class="heade">WSGI</div>
+    <div class="setfont">Web Server Gateway Interface (WSGI) has been adopted as a standard for Python web application development. WSGI is a specification for a universal interface between the web server and the web applications.
+    </div>
+    </div>
+     <div class="browser">
+    <div class="heade">Jinja2</div>
+    <div class="setfont">Jinja2 is a popular templating engine for Python. A web templating system combines a template with a certain data source to render dynamic web pages.
+
+Flask is often referred to as a micro framework. It aims to keep the core of an application simple yet extensible. Flask does not have built-in abstraction layer for database handling, nor does it have form a validation support. Instead, Flask supports the extensions to add such functionality to the application.
+    </div>
+    </div>
 {% endblock %}
